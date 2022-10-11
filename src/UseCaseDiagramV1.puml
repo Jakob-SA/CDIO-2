@@ -1,0 +1,21 @@
+@startuml
+skinparam actorStyle awesome
+
+package game {
+(Roll die)
+(Move space)
+(Shift turn)
+(Get points)
+(Lose points)
+}
+left to right direction
+Players --> (Move space)
+Players -> (Shift turn)
+Players -> (Get points)
+Players -> (Lose points)
+
+
+(Get points) <-- [<<Actor>> \nPoint calculator]
+[<<Actor>> \nPoint calculator] --> (Lose points)
+(Roll die) <-- [<<Actor>> \nRoll Die]
+@enduml
