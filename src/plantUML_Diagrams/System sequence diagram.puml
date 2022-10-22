@@ -1,6 +1,9 @@
 @startuml
 'https://plantuml.com/sequence-diagram
 
+Actor Players as Players
+
+
 loop while points<1000
 alt if roolDie == 10
 Players -> RandomCalculator: Die.roll()
