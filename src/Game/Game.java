@@ -8,7 +8,6 @@ public class Game {
     private int coin;
     Prints print = new Prints();
     public void gameStart() {
-
         print.player1Name();
         Player Player1 = new Player(input.nextLine());
         print.player2Name();
@@ -23,8 +22,8 @@ public class Game {
         if (coin == 0) {
             print.whoStarts(Player1.getName());
         } else print.whoStarts(Player2.getName());
-
     }
+
 }
 
 
