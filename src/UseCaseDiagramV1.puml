@@ -17,5 +17,5 @@ Players -> (Lose points)
 
 (Get points) <-- [<<Actor>> \nPoint calculator]
 [<<Actor>> \nPoint calculator] --> (Lose points)
-(Roll die) <-- [<<Actor>> \nRoll Die]
+(Roll die) <-- [<<Actor>> \nRandom calculator]
 @enduml
