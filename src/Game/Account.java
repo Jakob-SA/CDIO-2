@@ -17,7 +17,7 @@ public class Account {
         return balance;
 
     }
-    public int subtractPoints(Player owner){
+    public int subtractPoints(int felt){
         balance = balance - felt;
         return balance;
 
