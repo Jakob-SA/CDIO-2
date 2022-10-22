@@ -4,25 +4,32 @@ import java.util.Scanner;
 public class Game {
     Scanner input = new Scanner(System.in);
 
-    private String Player1Name, Player2Name, temp;
+    private String Player1TempName, Player2TempName, temp;
     private int coin;
     Prints print = new Prints();
     public void gameStart() {
         print.player1Name();
-        Player Player1 = new Player(input.nextLine());
+        Player1TempName = input.nextLine();
         print.player2Name();
-        Player Player2 = new Player(input.nextLine());
+        Player2TempName = input.nextLine();
+        coin = (int) Math.round(Math.random());
 
         while (temp != "") {
             print.randomStart();
             temp = input.nextLine();
         }
-
-        coin = (int) Math.round(Math.random());
         if (coin == 0) {
+            Player Player2 = new Player(Player2TempName);
+            Player Player1 = new Player(Player1TempName);
             print.whoStarts(Player1.getName());
-        } else print.whoStarts(Player2.getName());
+        } else {
+            Player Player1 = new Player(Player2TempName);
+            Player Player2 = new Player(Player1TempName);
+            print.whoStarts(Player2.getName());
+        }
+
     }
+
 
 }
 

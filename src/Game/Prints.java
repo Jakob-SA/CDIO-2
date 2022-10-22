@@ -10,11 +10,15 @@ public class Prints {
     public void player2Name(){
         System.out.println("Player 2! Write your name");
     }
-    public void randomStart(){
-        System.out.println("Press enter to randomly choose who starts");
+    public void randomStart() { System.out.println("Press enter to randomly choose who starts"); }
+    public void whoStarts(String name){
+        System.out.println(name + " starts!");
     }
-    public void whoStarts(String navn){
-        System.out.println(navn + " starter!");
+    public void whoTurn (String name) {
+        System.out.println("It is " + name + "s tur. Press enter to shake the cup and roll!");
+    }
+    public void endTurn (String name,String square, int gottenPoints, int totalPoints) {
+        System.out.println("You landed on " + square + " and got " + gottenPoints + " points. In total you now have " + totalPoints + "!");
     }
 
 }
