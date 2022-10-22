@@ -2,6 +2,7 @@ package Game;
 import java.util.Scanner;
 
 public class Game {
+
     Scanner input = new Scanner(System.in);
 
     private String Player1TempName, Player2TempName, temp;
@@ -28,7 +29,26 @@ public class Game {
             print.whoStarts(Player2.getName());
         }
 
+
+        }
+    public void spil()
+
+    {
+
+        Account acc1 = new Account("Player1");
+        DieCup kop = new DieCup(6);
+        kop.roll();
+        int felter = 11;
+
+        switch (felter) {
+            case 1:
+                acc1.addPoints(DieCup.getSum());
+        }
     }
+
+
+    }
+
 
 
 }
