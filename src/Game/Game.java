@@ -9,9 +9,11 @@ public class Game {
     public void gameStart() {
         Prints print = new Prints();
         print.player1Name();
-        Player1Name = input.nextLine();
+        Player Player1 = new Player(input.nextLine());
         print.player2Name();
-        Player2Name = input.nextLine();
+        Player Player2 = new Player(input.nextLine());
+        print.randomStart();
+
 
 
 

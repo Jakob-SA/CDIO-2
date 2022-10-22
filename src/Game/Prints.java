@@ -8,5 +8,8 @@ public class Prints {
     public void player2Name(){
         System.out.println("Player 2! Write your name");
     }
+    public void randomStart(){
+        System.out.println("Press enter to randomly choose who starts");
+    }
 
 }
