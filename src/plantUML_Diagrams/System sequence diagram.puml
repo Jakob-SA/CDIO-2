@@ -3,16 +3,13 @@
 
 Actor Players as Players
 
-
 loop while points<1000
-alt if roolDie == 10
 Players -> RandomCalculator: Die.roll()
 RandomCalculator -> Square: Die.faceValue()
 Square --> Players: square.Description()
 Square -> Points: points.Get
 Points ->Account: points.Add()
 Account --> Players: balance.get()
-end
 end
 
 @enduml
