@@ -3,11 +3,22 @@ import java.util.Scanner;
 
 public class Game {
     Scanner input = new Scanner(System.in);
-    private void gameStart(String Name1, String Name2) {
+
+    private String Player1Name, Player2Name;
+
+    public void gameStart() {
+        Prints print = new Prints();
+        print.player1Name();
+        Player1Name = input.nextLine();
+        print.player2Name();
+        Player2Name = input.nextLine();
+
+
 
 
 
     }
+
 }
 
 

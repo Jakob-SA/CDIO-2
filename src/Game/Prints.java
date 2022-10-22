@@ -8,4 +8,5 @@ public class Prints {
     public void player2Name(){
         System.out.println("Player 2! Write your name");
     }
+
 }
