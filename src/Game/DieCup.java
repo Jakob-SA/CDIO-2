@@ -5,14 +5,11 @@ public class DieCup {
     private int faceValue1, faceValue2, sum, maxFaceValue;//hvad øjnene viser
     public DieCup(int dieSides){
         maxFaceValue = dieSides;
-
     }
 
-    public int roll () {                    //terninger ruller
+    public void roll () {                    //terninger ruller
         faceValue1 = (int)(Math.random()*maxFaceValue)+1;
         faceValue2 = (int) (Math.random()*maxFaceValue)+1;
-        sum = faceValue1+faceValue2;
-        return sum;
     }
     public int getFaceValue1 () {            //Terningeøje 1
         return faceValue1;
@@ -21,6 +18,7 @@ public class DieCup {
         return faceValue2;
     }
     public int getSum() {
+        sum = faceValue1+faceValue2;
         return sum;
     }
 }

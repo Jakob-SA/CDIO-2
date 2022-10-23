@@ -1,26 +1,18 @@
 package Game;
 
 public class Account {
-
     private String owner;
     private int balance;
-
-
-    public Account (String owner) {
+    public Account (Player owner) {
         balance = 0;
-
-
     }
-    public int addPoints(int ammount)
-    {
+    public void addPoints(int ammount) {
         balance = balance + ammount;
-        return balance;
-
     }
-    public int subtractPoints(int felt){
+    public void subtractPoints(int felt) {
         balance = balance - felt;
+    }
+    public int getBalance() {
         return balance;
-
-
     }
 }

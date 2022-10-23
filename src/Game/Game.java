@@ -4,34 +4,39 @@ import java.util.Scanner;
 public class Game {
     Scanner input = new Scanner(System.in);
     Prints print = new Prints();
+    Player player1 = new Player("temp1");
+    Player player2 = new Player("temp2");
+    Account acc1 = new Account(player1);
+    Account acc2 = new Account(player2);
+    DieCup cup = new DieCup(6);
     public void gameStart() {
-        String Player1TempName, Player2TempName, temp ="temp";
-        int coin;
-        print.player1Name();
-        Player1TempName = input.nextLine();
-        Player Player1 = new Player(Player1TempName);
-        print.player2Name();
-        Player2TempName = input.nextLine();
-        Player Player2 = new Player(Player2TempName);
-        coin = (int) Math.round(Math.random());
-
-        while (temp != "") {
-            print.randomStart();
-            temp = input.nextLine();
-        }
+        String temp = "temp";
+        int coin = (int) Math.round(Math.random());
         if (coin == 0) {
-            print.whoStarts(Player1.getName());
+            print.player1Name();
+            player1.setName(input.nextLine());
+            print.player2Name();
+            player2.setName(input.nextLine());
+            while (temp != "") {
+                print.randomStart();
+                temp = input.nextLine();
+            }
+            print.whoStarts(player1.getName());
         } else {
-            print.whoStarts(Player2.getName());
-            Player1.setName(Player2TempName);
-            Player2.setName(Player1TempName);
+            print.player1Name();
+            player2.setName(input.nextLine());
+            print.player2Name();
+            player1.setName(input.nextLine());
+            while (temp != "") {
+                print.randomStart();
+                temp = input.nextLine();
+            }
+            print.whoStarts(player1.getName());
         }
     }
-    public void game(Account acc) {
+    public void turn (Player x){
         int points = 0;
         String square = "temp";
-        Account acc1 = new Account("Player1");
-        DieCup cup = new DieCup(6);
         cup.roll();
 
         switch (cup.getSum()) {
@@ -44,10 +49,6 @@ public class Game {
                 points = -100;
                 break;
             case 4:
-
-
-
-
 
         }
 

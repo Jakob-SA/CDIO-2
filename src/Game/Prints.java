@@ -1,9 +1,6 @@
 package Game;
 
-
 public class Prints {
-
-
     public void player1Name(){
         System.out.println("Player 1! Write your name");
     }
@@ -20,5 +17,4 @@ public class Prints {
     public void endTurn (String square, int gottenPoints, int totalPoints) {
         System.out.println("You landed on " + square + " and got " + gottenPoints + " points. In total you now have " + totalPoints + "!");
     }
-
 }
