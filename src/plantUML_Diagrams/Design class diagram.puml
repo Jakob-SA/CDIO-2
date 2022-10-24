@@ -10,9 +10,9 @@ class Account {
 
 class Player {
 --Attribute--
-
+-Name
 --Operation--
-
++getName()
 }
 class DieCup {
 --Attribute--
@@ -26,9 +26,23 @@ class DieCup {
 }
 class Print {
 --Attribute--
-
 --Operation--
-
++player1Name()
++player2Name()
++randomStart()
++whoStarts(name)
 }
 
+class Game {
+--Attribute--
+-Player1
+-Player2
+-coin
+--Operation--
++gameStart()
+}
+Player - Print
+Print - Game
+Game - DieCup
+DieCup - Account
 @enduml
