@@ -15,6 +15,9 @@ public class Prints {
         System.out.println("It is " + name + "s tur. Press enter to shake the cup and roll!");
     }
     public void endTurn (int dieSum,String square, int gottenPoints, int totalPoints) {
-        System.out.println("You rolled " + dieSum + " and landed on " + square + " and got " + gottenPoints + " points. In total you now have " + totalPoints + "!");
+        System.out.println("You rolled " + dieSum + ", landed on The " + square + " and got " + gottenPoints + " points. In total you now have " + totalPoints + "!");
+    }
+    public void endGame (String name) {
+        System.out.println("Cangratulations " + name + "! You have won the game.");
     }
 }

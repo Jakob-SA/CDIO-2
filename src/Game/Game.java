@@ -50,6 +50,11 @@ public class Game {
     public int getPlayer2Points () {
         return player2.getPoints();
     }
+    public void chooseWinner () {
+        if  (player1.acc.getBalance()> player2.acc.getBalance())
+        print.endGame(player1.getName());
+        else print.endGame(player2.getName());
+    }
         private void pressEnter () {
             String temp = "temp";
             while (temp != "") {

@@ -6,10 +6,11 @@ public class Main {
 
         Game game = new Game();
         game.gameStart();
-        while (game.getPlayer1Points() < 1000 && game.getPlayer2Points() < 1000) {
+        while (game.getPlayer1Points() < 3000 && game.getPlayer2Points() < 3000) {
             game.player1Turn();
             game.player2Turn();
         }
+        game.chooseWinner();
 
 
 
