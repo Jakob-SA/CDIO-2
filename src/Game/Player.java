@@ -1,7 +1,7 @@
 package Game;
 
 public class Player {
-    Account acc = new Account("hej");
+    Account acc = new Account();
     private String name;
 
 

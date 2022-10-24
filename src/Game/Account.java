@@ -1,9 +1,8 @@
 package Game;
 
 public class Account {
-    private String owner;
     private int balance;
-    public Account (String owner) {
+    public Account () {
         balance = 1000;
     }
     public void addPoints(int ammount) {
