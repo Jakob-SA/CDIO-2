@@ -14,7 +14,7 @@ public class Prints {
     public void whoTurn (String name) {
         System.out.println("It is " + name + "s tur. Press enter to shake the cup and roll!");
     }
-    public void endTurn (String square, int gottenPoints, int totalPoints) {
-        System.out.println("You landed on " + square + " and got " + gottenPoints + " points. In total you now have " + totalPoints + "!");
+    public void endTurn (int dieSum,String square, int gottenPoints, int totalPoints) {
+        System.out.println("You rolled " + dieSum + " and landed on " + square + " and got " + gottenPoints + " points. In total you now have " + totalPoints + "!");
     }
 }

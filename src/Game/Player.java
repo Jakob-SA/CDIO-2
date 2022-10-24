@@ -1,9 +1,8 @@
 package Game;
 
 public class Player {
+    Account acc = new Account("hej");
     private String name;
-
-
 
 
     public Player (String owner){
@@ -13,8 +12,16 @@ public class Player {
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
-    public void addpoints (Player test){}
+
+    public void points (int amount){
+        acc.addPoints(amount);
+    }
+    public int getPoints () {
+        return acc.getBalance();
+    }
+
 }

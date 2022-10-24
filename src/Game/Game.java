@@ -6,54 +6,55 @@ public class Game {
     Prints print = new Prints();
     Player player1 = new Player("temp1");
     Player player2 = new Player("temp2");
-    Account acc1 = new Account(player1);
-    Account acc2 = new Account(player2);
     DieCup cup = new DieCup(6);
+    Board board = new Board();
     public void gameStart() {
-        String temp = "temp";
+
         int coin = (int) Math.round(Math.random());
         if (coin == 0) {
             print.player1Name();
             player1.setName(input.nextLine());
             print.player2Name();
             player2.setName(input.nextLine());
-            while (temp != "") {
-                print.randomStart();
-                temp = input.nextLine();
-            }
+            print.randomStart();
+            pressEnter();
             print.whoStarts(player1.getName());
         } else {
             print.player1Name();
             player2.setName(input.nextLine());
             print.player2Name();
             player1.setName(input.nextLine());
-            while (temp != "") {
-                print.randomStart();
-                temp = input.nextLine();
-            }
+            print.randomStart();
+            pressEnter();
             print.whoStarts(player1.getName());
         }
     }
-    public void turn (Player x){
-        int points = 0;
-        String square = "temp";
+
+    public void player1Turn () {
+        print.whoTurn(player1.getName());
+        pressEnter();
         cup.roll();
-
-        switch (cup.getSum()) {
-            case 2:
-                square = "Tower";
-                points = 250;
-                break;
-            case 3:
-                square = "Crater";
-                points = -100;
-                break;
-            case 4:
-
+        player1.points(board.getValue(cup.getSum()));
+        print.endTurn(cup.getSum(), board.getSquare(cup.getSum()), board.getValue(cup.getSum()), player1.getPoints());
+    }
+    public void player2Turn () {
+        print.whoTurn(player2.getName());
+        pressEnter();
+        cup.roll();
+        player2.points(board.getValue(cup.getSum()));
+        print.endTurn(cup.getSum(), board.getSquare(cup.getSum()), board.getValue(cup.getSum()), player2.getPoints());
+    }
+    public int getPlayer1Points () {
+        return player1.getPoints();
+    }
+    public int getPlayer2Points () {
+        return player2.getPoints();
+    }
+        private void pressEnter () {
+            String temp = "temp";
+            while (temp != "") {
+                temp = input.nextLine();
+            }
         }
-
-        acc1.addPoints(points);
-
     }
 
-    }
