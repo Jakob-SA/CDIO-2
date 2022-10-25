@@ -12,9 +12,12 @@ public class Prints {
         System.out.println(name + " starts!");
     }
     public void whoTurn (String name) {
-        System.out.println("It is " + name + "s tur. Press enter to shake the cup and roll!");
+        System.out.println("It is " + name + "s turn. Press enter to shake the cup and roll!");
     }
     public void endTurn (int dieSum,String square, int gottenPoints, int totalPoints) {
+        if (dieSum == 10) {
+            System.out.println("You rolled " + dieSum + ", landed on The " + square + " and got " + gottenPoints + " points. In total you now have " + totalPoints + "!\nYou get an extra turn!" );
+        } else
         System.out.println("You rolled " + dieSum + ", landed on The " + square + " and got " + gottenPoints + " points. In total you now have " + totalPoints + "!");
     }
     public void endGame (String name) {

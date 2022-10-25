@@ -31,18 +31,23 @@ public class Game {
     }
 
     public void player1Turn () {
-        print.whoTurn(player1.getName());
-        pressEnter();
-        cup.roll();
-        player1.points(board.getValue(cup.getSum()));
-        print.endTurn(cup.getSum(), board.getSquare(cup.getSum()), board.getValue(cup.getSum()), player1.getPoints());
+        do {
+            print.whoTurn(player1.getName());
+            pressEnter();
+            cup.roll();
+            player1.points(board.getValue(cup.getSum()));
+            print.endTurn(cup.getSum(), board.getSquare(cup.getSum()), board.getValue(cup.getSum()), player1.getPoints());
+        } while (cup.getSum() == 10);
     }
     public void player2Turn () {
-        print.whoTurn(player2.getName());
-        pressEnter();
-        cup.roll();
-        player2.points(board.getValue(cup.getSum()));
-        print.endTurn(cup.getSum(), board.getSquare(cup.getSum()), board.getValue(cup.getSum()), player2.getPoints());
+        do {
+            print.whoTurn(player2.getName());
+            pressEnter();
+            cup.roll();
+            player2.points(board.getValue(cup.getSum()));
+            print.endTurn(cup.getSum(), board.getSquare(cup.getSum()), board.getValue(cup.getSum()), player2.getPoints());
+        } while (cup.getSum() == 10);
+
     }
     public int getPlayer1Points () {
         return player1.getPoints();
