@@ -1,0 +1,44 @@
+@startuml
+'https://plantuml.com/class-diagram
+skinparam classAttributeIconSize 0
+class Account {
+- Player
+----
++ Account (Player)
+}
+
+class Player {
+-Name
+----
++getName()
+}
+class DieCup {
+- FaceValue1
+- FaceValue2
+- maxFaceValue
+- sum
+----
++roll()
++DieCup(int DieSides)
+}
+class Print {
+----
++player1Name()
++player2Name()
++randomStart()
++whoStarts(name)
+}
+
+class Game {
+-Player1
+-Player2
+-coin
+----
++gameStart()
+}
+Player "2 "--> Print
+Print "1  "--> "1"Game
+Game "1     " -> "1"DieCup
+DieCup "1"- "    2"Account
+Player "2"<|- "2 "Account
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+Actor Players as Players
+
+loop while points<1000
+Players -> RandomCalculator: Die.roll()
+RandomCalculator -> Square: Die.faceValue()
+Square --> Players: square.Description()
+Square -> Points: points.Get
+Points ->Account: points.Add()
+Account --> Players: balance.get()
+end
+
+@enduml
