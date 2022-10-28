@@ -1,15 +1,21 @@
 @startuml
 'https://plantuml.com/sequence-diagram
 
-Actor Players as Players
+Actor Player as Player
 
-loop while points<1000
-Players -> RandomCalculator: Die.roll()
-RandomCalculator -> Square: Die.faceValue()
-Square --> Players: square.Description()
-Square -> Points: points.Get
-Points ->Account: points.Add()
-Account --> Players: balance.get()
+Player -> System: GameStart()
+loop while points<3000
+System -> RandomCalculator: DieCup.roll()
+RandomCalculator --> System: getSum()
+System -> Board: getSquare(dieSum)
+Board --> System: getSquare()
+System --> Player: print(DieCup.sum)
+System --> Player: print(getSquare)
+System -> Board: getValue(dieSum)
+Board --> System: getValue()
+System -> Account: addPoints()
+Account --> System: getBalance()
+System --> Player: print(getBalance)
 end
 
 @enduml
