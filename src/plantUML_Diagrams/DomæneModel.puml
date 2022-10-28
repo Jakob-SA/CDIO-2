@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+User "2" --"1" Game:Starts
+User "1" -- "1"Account:Owns
+Game"1"--"1..11"Field:Contains
+
+
+Game"1"--"2"Die:Contains
+
+
+
+
+
+
+
+@enduml
