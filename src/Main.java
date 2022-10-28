@@ -11,7 +11,6 @@ public class Main {
             game.player2Turn();
         }
         game.chooseWinner();
-
         }
     }
 
