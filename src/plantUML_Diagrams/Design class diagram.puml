@@ -36,9 +36,18 @@ class Game {
 ----
 +gameStart()
 }
-Player "2 "--> Print
-Print "1  "--> "1"Game
-Game "1     " -> "1"DieCup
-DieCup "1"- "    2"Account
-Player "2"<|- "2 "Account
+class Board{
+String Squares[ ]
+int Values[ ]
+----
+getSquare()
+getValue()
+}
+
+Print "1..*  "<-- "1"Game
+Game "1     " --> "1"DieCup
+Player "1" --> "1 "Account
+Board "1" <- "1" Game
+Player "2 " <-- "1  "Game
+
 @enduml
